@@ -23,6 +23,8 @@ app.use(express.json());
 const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
+  introspection: true,
+  playground: true,
   context: async ({ req, connection }) => {
     const contextObj = {};
     if (req) {
